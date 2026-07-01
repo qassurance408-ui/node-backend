@@ -20,6 +20,11 @@ app.get('/api/hello', (req, res) => {
   });
 });
 
+app.use((req, res, next) => {
+  console.log('Incoming path:', req.path);
+  next();
+});
+
 app.listen(PORT, () => {
   console.log(`Backend listening on port ${PORT}`);
 });
